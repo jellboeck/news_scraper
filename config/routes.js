@@ -19,10 +19,13 @@ module.exports = function(router) {
                     message: "No new articles today."
                 });
 
+            }
+
+            else   
                 res.json({
                     message: "Added " + docs.insertedCount + " new articles!"
                 });
-            }
+            
         });
     });
 

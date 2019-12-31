@@ -3,16 +3,16 @@ var cheerio = require("cheerio");
 
 var scrape = function (cb) {
 
-    request("http://www.nytimes.com", function (err, res, body) {
+    request("https://www.nytimes.com", function (err, res, body) {
 
 
         var $ = cheerio.load(body);
 
         var articles = [];
 
-        $(".theme-summary").each(function (i, element) {
-            var head = $(this).children(".story-heading").text().trim();
-            var sum = $(this).children(".summary").text().trim();
+        $("article").each(function (i, element) {
+            var head = $(element).find("h2").text().trim();
+            var sum = $(element).find("p").text();
 
             if (head && sum) {
 

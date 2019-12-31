@@ -32,17 +32,18 @@ $(document).ready(function () {
 
     function createPanel(article) {
         var panel =
-            $(["<div class='panel panel-default'>",
-                "<div class='panel-headining>",
+            $(["<div class='card'>",
+                "<div class='card-header'>",
                 "<h3>",
-                article.Headline,
-                "<a class='btn btn-success save'>",
-                "Save Article",
-                "</a>",
+                article.headline,
                 "</h3>",
                 "</div>",
-                "<div class='panel-body'>",
-                article.summary,
+                "<div class='card-body'>",
+                "<p class='card-text'>",article.summary,
+                "</p>",
+                "<a class='btn btn-secondary save'>",
+                "Save Article",
+                "</a>",
                 "</div>", "</div>"].join(""));
 
         panel.data("_id", article.id);
@@ -53,14 +54,13 @@ $(document).ready(function () {
     function renderEmpty() {
 
         var emptyAlert =
-            $(["<div class='alert alert-warning text-center'>",
+            $(["<div class='alert alert-warning text-center' id='empty'>",
                 "<h4>Looks like we don't have any new articles.</h4>", "</div>",
                 "<div class='panel panel-default'>",
                 "<div class='panel panel-heading text-center'>",
-                "<h3>What would you like to do?</h3>", "</div>",
+                 "</div>",
                 "<div class='panel-body text-center'>",
                 "<h4><a class='scrape-new'>Try Scraping Some Articles</a></h4>",
-                "<h4><a href='/saved'>Go to Saved Artices</a></h4>",
                 "</div>",
                 "</div>"
             ].join(""));
