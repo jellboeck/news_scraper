@@ -70,7 +70,7 @@ $(document).ready(function () {
 
 
     function handleArticleDelete() {
-        var articleToDelete = $(this).parents(".panel").data();
+        var articleToDelete = $(this).parents(".card").data();
 
         $.ajax({
             method: "DELETE",

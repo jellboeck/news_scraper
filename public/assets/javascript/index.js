@@ -11,7 +11,7 @@ $(document).ready(function () {
 
        articleContainer.empty();
     
-        $.get("/api/headlines?saved=false")
+        $.get("/api/headlines")
             .then(function (data) {
                 if (data && data.length) {
                     renderArticles(data);
@@ -48,7 +48,7 @@ $(document).ready(function () {
                 "</a>",
                 "</div>", "</div>"].join(""));
 
-        panel.data("_id", article.id);
+        panel.data("_id", article._id);
 
         return panel;
     }
