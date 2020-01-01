@@ -2,15 +2,13 @@ $(document).ready(function () {
 
     var articleContainer = $(".article-container");
     $(document).on("click", ".btn.delete", handleArticleDelete);
-    // $(document).on("click", ".btn.notes", handleArticleNotes);
-    // $(document).on("click", ".btn.save", handleNoteSave);
-    // $(document).on("click", ".btn.note-delete", handleNoteDelete);
 
     initPage();
 
     function initPage() {
 
-        articleContainer.empty();
+        $(".article-container").empty();
+        
         $.get("/api/headlines?saved=true")
             .then(function (data) {
                 if (data && data.length) {
@@ -51,17 +49,18 @@ $(document).ready(function () {
 
     function createPanel(article) {
         var panel =
-            $(["<div class='panel panel-default'>",
-                "<div class='panel-heading'>",
+            $(["<div class='card'>",
+                "<div class='card-header'>",
                 "<h3>",
-                article.Headline,
+                article.headline,
+                "</h3>",
+                "</div>",
+                "<div class='card-body'>",
+                "<p class='card-text'>",article.summary,
+                "</p>",
                 "<a class='btn btn-danger delete'>",
                 "Delete Article",
                 "</a>",
-                "</h3>",
-                "</div>",
-                "<div class='panel-body'>",
-                article.summary,
                 "</div>", "</div>"].join(""));
 
         panel.data("_id", article.id);

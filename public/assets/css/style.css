@@ -49,6 +49,11 @@ body {
     text-align: center;
 }
 
+.article-container{
+    width:95%;
+    margin: auto;
+}
+
 #empty {
     margin:20px;
 }
