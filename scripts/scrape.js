@@ -10,7 +10,6 @@ var scrape = function (cb) {
 
         var articles = [];
 
-
         $("article").each(function (i, element) {
             var head = $(element).find("h2").text().trim();
             var sum = $(element).find("p").text();
