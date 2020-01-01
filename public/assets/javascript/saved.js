@@ -63,7 +63,7 @@ $(document).ready(function () {
                 "</a>",
                 "</div>", "</div>"].join(""));
 
-        panel.data("_id", article.id);
+        panel.data("_id", article._id);
 
         return panel;
     }
@@ -74,7 +74,7 @@ $(document).ready(function () {
 
         $.ajax({
             method: "DELETE",
-            url: "/api/headlines" + articleToDelete._id
+            url: "/api/headlines/" + articleToDelete._id
         }).then(function (data) {
             if (data.ok) {
                 initPage();

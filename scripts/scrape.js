@@ -10,7 +10,6 @@ var scrape = function (cb) {
 
         var articles = [];
 
-        articles.empty()
 
         $("article").each(function (i, element) {
             var head = $(element).find("h2").text().trim();
