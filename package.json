@@ -1,8 +1,16 @@
 {
   "name": "news_scraper",
   "version": "1.0.0",
-  "description": "News Scraper",
+  "description": "News Scraper with MongoDB",
   "main": "server.js",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mongoose": "^5.8.3",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -16,13 +24,5 @@
   "bugs": {
     "url": "https://github.com/jellboeck/news_scraper/issues"
   },
-  "homepage": "https://github.com/jellboeck/news_scraper#readme",
-  "dependencies": {
-    "axios": "^0.19.0",
-    "cheerio": "^1.0.0-rc.3",
-    "express": "^4.17.1",
-    "express-handlebars": "^3.1.0",
-    "mongoose": "^5.8.3",
-    "request": "^2.88.0"
-  }
+  "homepage": "https://github.com/jellboeck/news_scraper#readme"
 }
